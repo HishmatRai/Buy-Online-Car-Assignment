@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- ************************************ Sweet alert  ******************************** -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- ******************** Firebase database ************************************************** -->
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA8g9OQjlWOc5m8QUclpTi-GquEhwY1OLU",
+    authDomain: "buyonlinecarassignment.firebaseapp.com",
+    databaseURL: "https://buyonlinecarassignment.firebaseio.com",
+    projectId: "buyonlinecarassignment",
+    storageBucket: "buyonlinecarassignment.appspot.com",
+    messagingSenderId: "321395931852",
+    appId: "1:321395931852:web:2819cdd9944f243a"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/jpg" href="https://img.icons8.com/color/48/000000/fiat-500.png" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #f1f1f1;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f1f1f1;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  border-right: 1px solid black;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.closebtn:hover{
+  color: red!important;
+}
+#logout{
+  background-color: rgb(27, 121, 150);
+  color: white
+
+}
+#logout:hover{
+  background-color: rgb(63, 157, 185);
+
+
+}
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(27, 121, 150);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: rgb(63, 157, 185);
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+#fixedNavBar{
+  position: fixed;
+  background-color: red
+}
+
+</style>
+</head>
+<body>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <p>
+    <h1>Profile</h1>
+  </p>
+  <p >
+      <img src="https://img.icons8.com/color/48/000000/user.png" width="50px" id="profile"><br>
+      <span><b id="userName"></b></span>
+    </p>
+    <p>
+        <img src="https://img.icons8.com/color/48/000000/secured-letter.png"><br>
+        <span><b id="userEmail"></b></span>
+    </p>
+    <p >
+            <img src="https://img.icons8.com/ios/50/000000/user-group-man-man-filled.png"><br>
+            <span><b id="mobNum"></b></span>
+    </p>
+  <a href="#" class="btn btn-info btn-lg" id="logout" onclick="logout()">
+    <span class="glyphicon glyphicon-log-out" ></span> Log out
+  </a>
+</div>
+
+<div id="main">
+
+  <p id="fixedNavBar">
+<input type="button" onclick="openNav()" value="☰ Profile" class="openbtn" id="profile">
+<input type="button" value="All" class="openbtn" id="all">
+<input type="button" value="Post" class="openbtn" id="post">
+<input type="button" value="My Post" class="openbtn" id="myPost">
+</p>
+
+  <h2>Collapsed Sidebar</h2>
+  <!-- <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p> -->
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+  <h2>Collapsed Sidebar</h2>
+
+</div>
+
+</body>
+<script src="./../js/profile.js"></script>
+</html> 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Log in</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/jpg" href="https://img.icons8.com/color/48/000000/fiat-500.png" />
+	<!-- ******************** Firebase database ************************************************** -->
+	<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+
+
+	<script>
+		var firebaseConfig = {
+			apiKey: "AIzaSyA8g9OQjlWOc5m8QUclpTi-GquEhwY1OLU",
+			authDomain: "buyonlinecarassignment.firebaseapp.com",
+			databaseURL: "https://buyonlinecarassignment.firebaseio.com",
+			projectId: "buyonlinecarassignment",
+			storageBucket: "buyonlinecarassignment.appspot.com",
+			messagingSenderId: "321395931852",
+			appId: "1:321395931852:web:2819cdd9944f243a"
+		};
+		firebase.initializeApp(firebaseConfig);
+	</script>
+
+	<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+	<link rel="stylesheet" href="./../css/style.css">
+</head>
+
+<body>
+
+	<div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg');">
+		<div class="inner">
+			<form action="">
+				<h3>Log in</h3>
+
+				<div class="form-wrapper">
+					<label for="">Email</label>
+					<input type="text" class="form-control" id="email">
+				</div>
+				<div class="form-wrapper">
+					<label for="">Password</label>
+					<input type="password" class="form-control" id="password">
+				</div>
+				<p id="showError"></p>
+				<input type="button" value="Log in" class="allBtn" id="login">
+				<input type="button" value="Sign Up" class="allBtn" id="signup">
+
+			</form>
+		</div>
+	</div>
+
+</body>
+<script src="./../js/login.js"></script>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ************************************ Sweet alert  ******************************** -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- ******************** Firebase database ************************************************** -->
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyA8g9OQjlWOc5m8QUclpTi-GquEhwY1OLU",
+    authDomain: "buyonlinecarassignment.firebaseapp.com",
+    databaseURL: "https://buyonlinecarassignment.firebaseio.com",
+    projectId: "buyonlinecarassignment",
+    storageBucket: "buyonlinecarassignment.appspot.com",
+    messagingSenderId: "321395931852",
+    appId: "1:321395931852:web:2819cdd9944f243a"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/jpg" href="https://img.icons8.com/color/48/000000/fiat-500.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="./css/moredetail.css" type="text/css">
+<style>
+  #showMyP{
+border: 10px solid transparent;
+padding: 15px;
+-webkit-border-image: url(./../images/border.png) 30 stretch; /* Safari 3.1-5 */
+-o-border-image: url(./../images/border.png) 30 stretch; /* Opera 11-12.1 */
+border-image: url(./../images/border.png) 30 stretch;
+margin-top: 20px;
+text-align: center
+
+}</style>
+    <title>More Detail</title>
+
+</head>
+<body>
+        <div id="mainDiv"></div>
+        <center>
+          <div id="mySidebar" class="sidebar">
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                  <p>
+                    <h1>Profile</h1>
+                  </p>
+                  <p >
+                      <img src="https://img.icons8.com/color/48/000000/user.png" width="50px" id="profile"><br>
+                      <span><b id="userName"></b></span>
+                    </p>
+                    <p>
+                        <img src="https://img.icons8.com/color/48/000000/secured-letter.png"><br>
+                        <span><b id="userEmail"></b></span>
+                    </p>
+                    <p >
+                            <img src="https://img.icons8.com/ios/50/000000/user-group-man-man-filled.png"><br>
+                            <span><b id="mobNum"></b></span>
+                    </p>
+                  <a href="#" class="btn btn-info btn-lg" id="logout" onclick="logout()">
+                    <span class="glyphicon glyphicon-log-out" ></span> Log out
+                  </a>
+                </div>
+              </center>
+                <div id="main">
+                
+                  <p id="fixedNavBar">
+                <!-- <input type="button" onclick="openNav()" value="☰ Profile" class="openbtn" id="profile"> -->
+                <input type="button" value="🔙 Go Back" class="openbtn" id="goBack">
+
+                </p>
+                
+                  <h2>Collapsed Sidebar</h2>
+<div id="ShowDetalCard">
+
+</div>              
+            
+  <footer>Designed by Hishamt Rai</footer>
+                
+                </div>
+              </div>
+</body>
+<script src="./../js/moredetail.js"></script>
+</html>

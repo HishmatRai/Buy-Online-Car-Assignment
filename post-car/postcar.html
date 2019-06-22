@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- ******************** Firebase database ************************************************** -->
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyA8g9OQjlWOc5m8QUclpTi-GquEhwY1OLU",
+			authDomain: "buyonlinecarassignment.firebaseapp.com",
+			databaseURL: "https://buyonlinecarassignment.firebaseio.com",
+			projectId: "buyonlinecarassignment",
+			storageBucket: "buyonlinecarassignment.appspot.com",
+			messagingSenderId: "321395931852",
+			appId: "1:321395931852:web:2819cdd9944f243a"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+	</script>
+	<title>Post Car</title>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/jpg" href="https://img.icons8.com/color/48/000000/fiat-500.png" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+</head>
+
+<body>
+
+	<div id="mainDiv">
+		<!-- ********************* Create Event **************************** -->
+		<center>
+			<div id="mySidebar" class="sidebar">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+				<p>
+					<h1>Profile</h1>
+				</p>
+				<p>
+					<img src="https://img.icons8.com/color/48/000000/user.png" width="50px" id="profile"><br>
+					<span><b id="userName"></b></span>
+				</p>
+				<p>
+					<img src="https://img.icons8.com/color/48/000000/secured-letter.png"><br>
+					<span><b id="userEmail"></b></span>
+				</p>
+				<p>
+					<img src="https://img.icons8.com/ios/50/000000/user-group-man-man-filled.png"><br>
+					<span><b id="mobNum"></b></span>
+				</p>
+				<a href="#" class="btn btn-info btn-lg" id="logout" onclick="logout()">
+					<span class="glyphicon glyphicon-log-out"></span> Log out
+				</a>
+			</div>
+		</center>
+		<div id="main">
+
+			<p id="fixedNavBar">
+				<input type="button" onclick="openNav()" value="☰ Profile" class="openbtn" id="profile">
+				<input type="button" value="All" class="openbtn" id="all">
+				<input type="button" value="Post" class="openbtn" id="post">
+				<input type="button" value="My Post" class="openbtn" id="myPost">
+			</p>
+
+			<h2>Collapsed Sidebar</h2>
+
+
+
+
+			<div class="container-contact100">
+
+
+				<form class="contact100-form validate-form" id="reseatData">
+
+					<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Car name is required">
+						<span class="label-input100">Car Name</span>
+						<input class="input100" type="text" name="CarName" id="CarName"
+							placeholder="Enter car name .....">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Car model is required">
+						<span class="label-input100">Car Model</span>
+						<input class="input100" type="text" name="carModel" id="carModel"
+							placeholder="Enter car model ....">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Car price is required">
+						<span class="label-input100">Car price</span>
+						<input class="input100" type="number" name="carPrice" id="carPrice"
+							placeholder="Enter Car Price">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Car no is required">
+						<span class="label-input100">Car no</span>
+						<input class="input100" type="text" name="carNo" id="carNo" placeholder="Car no ....">
+						<span class="focus-input100"></span>
+					</div>
+					<!-- <div class="wrap-input100 rs1-wrap-input100 validate-input"
+						data-validate="Contact Number is required">
+						<span class="label-input100">Contact Number</span>
+						<input class="input100" type="text" name="contactNumber" id="contactNumber"
+							placeholder="Enter Contact Number ....">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 rs1-wrap-input100 validate-input"
+						data-validate="Valid email is required: ex@abc.xyz">
+						<span class="label-input100">Email</span>
+						<input class="input100" type="text" name="email" id="emailAddress"
+							placeholder="Enter your email addess">
+						<span class="focus-input100"></span>
+					</div> -->
+
+					<div class="wrap-input100 validate-input">
+						<span>Car Image</span>
+						<input type="file" name="fileToUpload" id="fileToUpload">
+
+					</div><br>
+
+					<div class="wrap-input100 validate-input" data-validate="Description is required">
+						<span class="label-input100">Car Description</span>
+						<textarea class="input100" name="message" id="description"
+							placeholder="Car description here..."></textarea>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="container-contact100-form-btn">
+						<input type="button" class="contact100-form-btn" value="Submit" id="submitbtn">
+					</div>
+				</form>
+
+
+			</div>
+		</div>
+		<footer>Designed by Hishamt Rai</footer>
+
+	</div>
+	</div>
+	<!-- ******************* Show Data **************************************** -->
+
+</body>
+<!--===============================================================================================-->
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+
+<!--===============================================================================================-->
+<!-- <script src="js/main.js"></script> -->
+<script src="./../js/postcar.js"></script>
+
+</html>
